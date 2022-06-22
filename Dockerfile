@@ -1,4 +1,4 @@
-FROM httpd:2.4.46-alpine
+FROM httpd:alpine
 COPY ./my-httpd.conf /usr/local/apache2/conf/httpd.conf
 COPY ./my-ssl.conf /usr/local/apache2/conf/extra/httpd-ssl.conf
 ARG APACHE_SERVER_NAME
