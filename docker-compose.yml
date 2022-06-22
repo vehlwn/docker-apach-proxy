@@ -1,0 +1,11 @@
+version: "3.3"
+
+services:
+  apache:
+    build: .
+    restart: always
+    ports:
+      - 4581:80
+    logging:
+      options:
+        max-size: "${DOCKER_LOGS_MAX_SIZE:-100M}"
