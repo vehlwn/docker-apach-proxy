@@ -1,0 +1,7 @@
+/build*/
+/*.user
+__pycache__/
+.mypy_cache/
+.vim/
+owncert/
+.env

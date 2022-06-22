@@ -5,11 +5,12 @@ services:
     build:
       context: .
       args:
-        - "PROXY_USER=user1"
-        - "PROXY_PASSWORD=nygZMR3z2djB8sJCInFP"
+        - APACHE_USER=$CONFIG_APACHE_USER
+        - APACHE_PASSWORD=$CONFIG_APACHE_PASSWORD
+        - APACHE_SERVER_NAME=$CONFIG_APACHE_SERVER_NAME
     restart: always
     ports:
-      - 4581:80
+      - "0.0.0.0:$CONFIG_APACHE_EXTERNAL_PORT:443"
     logging:
       options:
         max-size: "${DOCKER_LOGS_MAX_SIZE:-100M}"
