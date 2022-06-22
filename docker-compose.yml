@@ -2,7 +2,11 @@ version: "3.3"
 
 services:
   apache:
-    build: .
+    build:
+      context: .
+      args:
+        - "PROXY_USER=user1"
+        - "PROXY_PASSWORD=nygZMR3z2djB8sJCInFP"
     restart: always
     ports:
       - 4581:80
